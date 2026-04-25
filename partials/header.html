@@ -1,0 +1,89 @@
+<header class="header" data-header>
+  <div class="header__inner container">
+    <a href="/" class="header__logo" aria-label="Геккодио — на главную">
+      <img src="assets/img/new%20logo.svg" alt="Геккодио" class="header__logo-icon" width="171" height="44">
+    </a>
+
+    <nav class="header__nav" aria-label="Основная навигация">
+      <div class="header__nav-item">
+        <button
+          type="button"
+          class="header__nav-link"
+          aria-haspopup="true"
+          aria-expanded="false"
+          data-dropdown-trigger="services"
+        >
+          Услуги
+          <span class="header__caret" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="header__nav-item">
+        <a href="#portfolio" class="header__nav-link">Портфолио</a>
+      </div>
+      <div class="header__nav-item">
+        <button
+          type="button"
+          class="header__nav-link"
+          aria-haspopup="true"
+          aria-expanded="false"
+          data-dropdown-trigger="menu"
+        >
+          Меню
+          <span class="header__caret" aria-hidden="true"></span>
+        </button>
+      </div>
+    </nav>
+
+    <a
+      href="#contact"
+      class="btn btn--primary header__cta"
+      data-modal-open="contact"
+    >
+      Напишите нам
+    </a>
+
+    <button
+      type="button"
+      class="header__burger"
+      aria-label="Открыть меню"
+      aria-expanded="false"
+      data-burger
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="header__mobile-panel" data-mobile-panel>
+    <nav class="header__mobile-nav" aria-label="Мобильная навигация">
+      <button
+        type="button"
+        class="header__nav-link"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Услуги
+        <span class="header__caret" aria-hidden="true"></span>
+      </button>
+      <a href="#portfolio" class="header__nav-link">Портфолио</a>
+      <button
+        type="button"
+        class="header__nav-link"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Меню
+        <span class="header__caret" aria-hidden="true"></span>
+      </button>
+    </nav>
+
+    <a
+      href="#contact"
+      class="btn btn--primary btn--lg header__mobile-cta"
+      data-modal-open="contact"
+    >
+      Напишите нам
+    </a>
+  </div>
+</header>
