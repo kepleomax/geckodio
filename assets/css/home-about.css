@@ -101,12 +101,14 @@
 .about__lead-col .section__lead {
   width: 100%;
   max-width: 100%;
-  color: var(--about-lead);
+  font-size: var(--fs-18);
+  font-weight: 300;
+  color: #1e1e1e;
 }
 
 @media (min-width: 960px) {
   .about__lead-col .section__lead {
-    font-size: var(--fs-20);
+    font-size: var(--fs-18);
     line-height: 1.55;
   }
 
@@ -398,19 +400,24 @@
   .about__title {
     font-size: 28px;
     flex-direction: column-reverse;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
     gap: 0;
   }
 
   .about__title-accent {
+    display: block;
     width: 100%;
+    text-align: left;
+    margin: 0;
   }
 
   .about__stickers {
+    display: flex;
     width: 100%;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-end;
     gap: var(--space-8);
     margin-left: 0;

@@ -37,10 +37,11 @@
 }
 
 .faq__sticker--how {
-  background-color: #d6fda6;
+  background-color: rgba(214, 253, 166, 1);
   color: var(--color-text);
   transform: rotate(7deg);
 }
+
 
 .faq__title {
   max-width: 720px;
@@ -221,6 +222,7 @@
   .faq__head {
     margin-bottom: var(--space-32);
   }
+
 
   .faq__summary {
     padding: var(--space-16) var(--space-20);

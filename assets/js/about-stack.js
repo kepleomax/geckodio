@@ -57,7 +57,7 @@
 
   /* ── Autoplay ────────────────────────────────────────────── */
 
-  const AUTOPLAY_INTERVAL = 8000;
+  const AUTOPLAY_INTERVAL = 4000;
   let autoplayTimer = null;
   let isPaused = false;
 

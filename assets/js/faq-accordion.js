@@ -5,14 +5,24 @@
   const items = root.querySelectorAll("details.faq__item");
   if (!items.length) return;
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const BODY_TRANSITION = "height 820ms cubic-bezier(0.25, 0.1, 0.25, 1), opacity 650ms ease";
+
+  function runOnNextFrame(callback) {
+    requestAnimationFrame(function () {
+      requestAnimationFrame(callback);
+    });
+  }
 
   function expandItem(details, body) {
     details.dataset.animating = "true";
+    body.style.transition = "none";
     details.open = true;
     body.style.height = "0px";
     body.style.opacity = "0";
+    void body.offsetHeight;
+    body.style.transition = BODY_TRANSITION;
 
-    requestAnimationFrame(function () {
+    runOnNextFrame(function () {
       body.style.height = body.scrollHeight + "px";
       body.style.opacity = "1";
     });
@@ -20,6 +30,7 @@
     const onTransitionEnd = function (event) {
       if (event.propertyName !== "height") return;
       body.style.height = "auto";
+      body.style.opacity = "";
       details.dataset.animating = "false";
       body.removeEventListener("transitionend", onTransitionEnd);
     };
@@ -29,10 +40,13 @@
 
   function collapseItem(details, body) {
     details.dataset.animating = "true";
+    body.style.transition = "none";
     body.style.height = body.scrollHeight + "px";
     body.style.opacity = "1";
+    void body.offsetHeight;
+    body.style.transition = BODY_TRANSITION;
 
-    requestAnimationFrame(function () {
+    runOnNextFrame(function () {
       body.style.height = "0px";
       body.style.opacity = "0";
     });
@@ -41,6 +55,7 @@
       if (event.propertyName !== "height") return;
       details.open = false;
       body.style.height = "";
+      body.style.opacity = "";
       details.dataset.animating = "false";
       body.removeEventListener("transitionend", onTransitionEnd);
     };
